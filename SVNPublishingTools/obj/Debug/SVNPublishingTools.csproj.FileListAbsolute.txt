@@ -31,3 +31,4 @@ C:\Users\f132819\Desktop\小菜菜\SVNPublishingTools\SVNPublishingTools\obj\Deb
 C:\Users\f132819\Desktop\小菜菜\SVNPublishingTools\SVNPublishingTools\obj\Debug\SVNPublishingTools.pdb
 C:\Users\f132819\Desktop\小菜菜\SVNPublishingTools\SVNPublishingTools\obj\Debug\View\MainWindow.g.cs
 C:\Users\f132819\Desktop\小菜菜\SVNPublishingTools\SVNPublishingTools\obj\Debug\View\MainWindow.baml
+C:\Users\f132819\Desktop\小菜菜\SVNPublishingTools\SVNPublishingTools\obj\Debug\SVNPublishingTools.csprojResolveAssemblyReference.cache

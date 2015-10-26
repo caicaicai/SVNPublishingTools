@@ -11,6 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 using SharpSvn;
 using SharpSvn.Implementation;
 using System.Collections.ObjectModel;
+using SVNPublishingTools.Model;
 
 
 namespace SVNPublishingTools.ViewModel
@@ -32,6 +33,15 @@ namespace SVNPublishingTools.ViewModel
 
         public ICommand fetch { get; private set; }
 
+        private SVN _svn;
+
+        public SVN svn
+        {
+            get { return _svn; }
+            set { _svn = value; }
+        }
+
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -46,6 +56,8 @@ namespace SVNPublishingTools.ViewModel
                 // Code runs "for real"
 
                 fetch = new RelayCommand(() => fetchExec(), () => { return true; });
+
+                svn = new SVN();
             }
         }
 
@@ -54,7 +66,10 @@ namespace SVNPublishingTools.ViewModel
             using (SvnClient client = new SvnClient())
             {
                 Collection<SvnLogEventArgs> logItems = new Collection<SvnLogEventArgs>();
+
                 client.GetLog(new Uri("http://192.168.1.193/svndata/fivestar/ecommerce/branches/dev2.1"), out logItems);
+                svn.SvnLogs = logItems;
+
 
                 Console.WriteLine(logItems[0].Author);
 
